@@ -26,12 +26,12 @@
         </td>
         <td>
             <li th:each="employer : ${employers}">
-                <a th:href="@{/list/jobs(column=employer,value=${employer.name})}" th:text="${employer.name}"></a>
+                <a th:href="@{/list/jobs(column=employer,value=${employer.name})}" th:text="${employer.name}">View All</a>
             </li>
         </td>
         <td>
             <li th:each="skill : ${skills}">
-                <a th:href="@{/list/jobs(column=skill,value=${skill.name})}" th:text="${skill.name}"></a>
+                <a th:href="@{/list/jobs(column=skill,value=${skill.name})}" th:text="${skill.name}">View All</a>
             </li>
         </td>
     </tr>
