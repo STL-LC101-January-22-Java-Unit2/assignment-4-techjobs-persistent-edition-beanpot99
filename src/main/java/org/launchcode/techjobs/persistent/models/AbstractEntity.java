@@ -1,12 +1,20 @@
 package org.launchcode.techjobs.persistent.models;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
-
+@MappedSuperclass
 public abstract class AbstractEntity {
-
+@Id
+@GeneratedValue
     private int id;
 
+@NotNull
+@Size(max=100, message = "Name too long!")
     private String name;
 
     public int getId() {
