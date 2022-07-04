@@ -9,7 +9,6 @@ public class Job extends AbstractEntity{
 
 
     @ManyToOne
-    @JoinColumn(name = "employer_id")
     private Employer employer;
 
 
@@ -25,7 +24,7 @@ public class Job extends AbstractEntity{
     public Job() {
     }
 
-    public Job(Employer anEmployer, List aSkill) {
+    public Job(Employer anEmployer, List<Skill> aSkill) {
         super();
         this.skills= aSkill;
         this.employer = anEmployer;
@@ -47,9 +46,9 @@ public class Job extends AbstractEntity{
     public List<Skill> getSkills() {
         return skills;
     }
-    public void addSkill(Skill skill){
-        skills.add(skill);
-    }
+    //public void addSkill(Skill skill){
+        //skills.add(skill);
+    //}
     public void setSkills(List<Skill> skills) {
         this.skills = skills;
     }
