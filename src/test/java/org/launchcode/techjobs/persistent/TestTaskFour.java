@@ -137,7 +137,7 @@ public class TestTaskFour extends AbstractTest {
             @Mocked Errors errors)
             throws ClassNotFoundException, NoSuchMethodException, NoSuchFieldException, IllegalAccessException, InvocationTargetException {
         Class homeControllerClass = getClassByName("controllers.HomeController");
-        Method processAddJobFormMethod = homeControllerClass.getMethod("processAddJobForm", Job.class, Errors.class, Model.class, int.class, List.class);
+        Method processAddJobFormMethod = homeControllerClass.                 getMethod("processAddJobForm", Job.class, Errors.class, Model.class, int.class, List.class);
 
         new Expectations() {{
             skillRepository.findAllById((Iterable<Integer>) any);
