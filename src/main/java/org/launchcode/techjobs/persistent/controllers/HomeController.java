@@ -51,9 +51,10 @@ public class HomeController {
             return "add";
         }
         Employer employer = (Employer)result.get();
-
         model.addAttribute("employers", employer);
-        return "redirect:";
+        List<Skill> skillObjs = (List<Skill>) skillRepository.findAllById(skills);
+        model.addAttribute("skills", skillObjs);
+        return "view";
     }
 
     @GetMapping("view/{jobId}")

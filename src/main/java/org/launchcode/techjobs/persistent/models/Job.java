@@ -14,10 +14,9 @@ public class Job extends AbstractEntity{
 
 
 
-    @ManyToMany
-    @JoinTable(name = "job_skills",
-            joinColumns = @JoinColumn(name = "job_id", referencedColumnName = "skills_id"))
-    private final List<Skill> skills = new ArrayList<>();
+
+    @ManyToMany()
+    private List<Skill> skills = new ArrayList<>();
 
 
 
@@ -26,8 +25,9 @@ public class Job extends AbstractEntity{
     public Job() {
     }
 
-    public Job(Employer anEmployer) {
+    public Job(Employer anEmployer, List aSkill) {
         super();
+        this.skills= aSkill;
         this.employer = anEmployer;
 
     }
@@ -49,5 +49,8 @@ public class Job extends AbstractEntity{
     }
     public void addSkill(Skill skill){
         skills.add(skill);
+    }
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
     }
 }
